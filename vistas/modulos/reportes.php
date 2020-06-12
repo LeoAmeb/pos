@@ -44,21 +44,7 @@ if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
           <button type="button" class="btn btn-default" id="daterange-btn2">
            
             <span>
-              <i class="fa fa-calendar"></i> 
-
-              <?php
-
-                if(isset($_GET["fechaInicial"])){
-
-                  echo $_GET["fechaInicial"]." - ".$_GET["fechaFinal"];
-                
-                }else{
-                 
-                  echo 'Rango de fecha';
-
-                }
-
-              ?>
+              <i class="fa fa-calendar"></i> Rango de fecha
             </span>
 
             <i class="fa fa-caret-down"></i>

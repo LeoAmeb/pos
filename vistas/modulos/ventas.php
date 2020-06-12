@@ -12,16 +12,6 @@ if($_SESSION["perfil"] == "Especial"){
 
 }
 
-$xml = ControladorVentas::ctrDescargarXML();
-
-if($xml){
-
-  rename($_GET["xml"].".xml", "xml/".$_GET["xml"].".xml");
-
-  echo '<a class="btn btn-block btn-success abrirXML" archivo="xml/'.$_GET["xml"].'.xml" href="ventas">Se ha creado correctamente el archivo XML <span class="fa fa-times pull-right"></span></a>';
-
-}
-
 ?>
 <div class="content-wrapper">
 
@@ -62,21 +52,7 @@ if($xml){
          <button type="button" class="btn btn-default pull-right" id="daterange-btn">
            
             <span>
-              <i class="fa fa-calendar"></i> 
-
-              <?php
-
-                if(isset($_GET["fechaInicial"])){
-
-                  echo $_GET["fechaInicial"]." - ".$_GET["fechaFinal"];
-                
-                }else{
-                 
-                  echo 'Rango de fecha';
-
-                }
-
-              ?>
+              <i class="fa fa-calendar"></i> Rango de fecha
             </span>
 
             <i class="fa fa-caret-down"></i>
@@ -158,8 +134,6 @@ if($xml){
                   <td>
 
                     <div class="btn-group">
-
-                      <a class="btn btn-success" href="index.php?ruta=ventas&xml='.$value["codigo"].'">xml</a>
                         
                       <button class="btn btn-info btnImprimirFactura" codigoVenta="'.$value["codigo"].'">
 
